@@ -1,0 +1,19 @@
+<div class="row d-flex justify-content-between">
+  <div class="p-2 button-container">
+    <a class="btn btn-primary" (click)="prev(pictureList[display].id)">
+      <fa-icon [icon]="faCaretLeft"></fa-icon>
+    </a>
+  </div>
+  <div class="p-2 img-container">
+    <div [@animPictureSlider]="direction" class="fixed">
+      <ng-container *ngFor="let picture of pictureList">
+        <img *ngIf="display===picture.id" [src]="picture.url" class="img-fluid">
+      </ng-container>
+    </div>
+  </div>
+  <div class="p-2 button-container">
+    <a class="btn btn-primary" (click)="next(pictureList[display].id)">
+      <fa-icon [icon]="faCaretRight"></fa-icon>
+    </a>
+  </div>
+</div>
